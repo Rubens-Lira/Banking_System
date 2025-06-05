@@ -6,8 +6,6 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-import javax.imageio.stream.FileImageInputStream;
-
 public class Persistencia {
   private ArrayList<Cliente> clientes;
   private static final String ARQUIVO = "dados";
@@ -64,6 +62,7 @@ public class Persistencia {
     }
   }
 
+  @SuppressWarnings("unchecked") // Siginifica que o java não consegue garantir que seja um ArrayList<Cliente>
   public void carregarArquivo() {
     try (
         FileInputStream fis = new FileInputStream(ARQUIVO);
