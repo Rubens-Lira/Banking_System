@@ -73,8 +73,6 @@ public class Persistencia {
       } else {
         clientes = new ArrayList<Cliente>();
       }
-      ois.close();
-      fis.close();
     } catch (Exception e) {
       e.printStackTrace();
       clientes = new ArrayList<Cliente>();
