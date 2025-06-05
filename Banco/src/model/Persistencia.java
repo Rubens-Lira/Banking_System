@@ -51,12 +51,11 @@ public class Persistencia {
   }
 
   public void salvarArquivo() {
-    try {
+    try (
       FileOutputStream fos = new FileOutputStream(ARQUIVO);
       ObjectOutputStream oos = new ObjectOutputStream(fos);
+    ) {
       oos.writeObject(clientes);
-      oos.close();
-      fos.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
